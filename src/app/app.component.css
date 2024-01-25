@@ -1,0 +1,16 @@
+html,
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    background-color: rgba(0, 255, 255, 0.061);
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}

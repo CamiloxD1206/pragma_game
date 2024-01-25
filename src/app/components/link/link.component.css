@@ -1,0 +1,56 @@
+.container {
+    padding: 9%;
+}
+
+.link-card {
+    width: 500px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgb(33, 0, 80);
+    box-shadow: 0 0 20px rgb(131, 49, 237);
+}
+
+.link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 20px;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.link-header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-left: 15px;
+    background-color: rgb(96, 36, 175);
+    color: white;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    height: 45px;
+}
+
+.close {
+    margin-right: 20px;
+}
+
+.copy {
+    color: rgb(131, 49, 237);
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    border: 0;
+}
+
+.link {
+    background-color: rgba(71, 26, 131, 0.081);
+    border: solid rgb(96, 36, 175) 2px;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.link-container a {
+    color: white;
+}

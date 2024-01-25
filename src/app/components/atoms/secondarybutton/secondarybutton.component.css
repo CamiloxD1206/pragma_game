@@ -1,0 +1,40 @@
+button {
+    --color: rgb(131, 49, 237);
+    font-family: inherit;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 17px;
+    z-index: 1;
+    color: var(--color);
+    border: 2px solid var(--color);
+    border-radius: 20px;
+    position: relative;
+}
+
+button::before {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+button:hover {
+    color: white;
+}
+
+button:before {
+    top: 100%;
+    left: 100%;
+    transition: 0.3s all;
+}
+
+button:hover::before {
+    top: -30px;
+    left: -30px;
+}
