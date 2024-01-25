@@ -12,9 +12,17 @@ img {
 .room-name {
     width: 800px;
     margin-right: 15%;
-    margin-left: 27%;
+    margin-left: 28%;
 }
 
 .icon-profile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
     margin: 10px
+}
+
+.icon-profile h4 {
+    margin-right: 30px;
 }
