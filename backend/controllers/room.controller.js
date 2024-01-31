@@ -1,10 +1,10 @@
 import Room from '../models/room.model.js';
+import slugify from 'slugify';
 
 export const createRoom = async(req, res) => {
     const { roomname } = req.body;
 
     try {
-
         const { id: userId } = req.user;
 
         const existingRoom = await Room.findOne({ roomname });
@@ -12,14 +12,19 @@ export const createRoom = async(req, res) => {
             return res.status(400).json({ message: "La sala ya existe." });
         }
 
-        const newRoom = new Room({ roomname, createdBy: userId });
+        const link = slugify(roomname, { lower: true });
+
+        const newRoom = new Room({ roomname, createdBy: userId, link });
         const roomSaved = await newRoom.save();
 
-        res.status(201).json({ id: roomSaved._id, roomname: roomSaved.roomname, createdBy: roomSaved.createdBy });
+
+        const fullLink = `${req.protocol}://${req.get('host')}/rooms/${link}`;
+        res.status(201).json({ id: roomSaved._id, roomname: roomSaved.roomname, createdBy: roomSaved.createdBy, link: fullLink });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
+
 
 
 export const getRoomDetails = async(req, res) => {
